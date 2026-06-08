@@ -1,0 +1,7 @@
+scenario,stability_score,chemical_pressure,crop_output_index,ecological_interpretation
+Conventional baseline,0.5299,1.00,1.00,Reference productivity with high chemical pressure
+Chemical withdrawal,0.6030,0.00,0.62,Lower fluctuation and faster recovery with short-term yield trade-off
+Bat-assisted control,0.6810,0.35,1.08,Predation and pollination improve stability and crop output
+Bee-assisted pollination,0.6460,0.35,1.04,Pollination improves yield with moderate stability gain
+Integrated biocontrol,0.7010,0.20,1.12,Mixed intervention balances pressure reduction and productivity
+Organic transition,0.7141,0.10,1.18,Long-term stability improves through soil response and biological control

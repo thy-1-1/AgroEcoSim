@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 520" role="img" aria-labelledby="title desc">
+  <title id="title">PSR stability dashboard</title>
+  <desc id="desc">A dashboard of PSR indicators showing improved ecosystem stability under organic transition.</desc>
+  <rect width="700" height="520" fill="#ffffff"/>
+  <rect x="26" y="26" width="648" height="468" fill="#f7f9f5" stroke="#d9e2dc"/>
+  <g font-family="Arial, sans-serif">
+    <text x="60" y="78" fill="#18231f" font-size="24" font-weight="700">PSR Stability Dashboard</text>
+    <text x="60" y="104" fill="#5f6e67" font-size="13">Pressure-State-Response composite evaluation</text>
+  </g>
+  <g transform="translate(72 146)" font-family="Arial, sans-serif">
+    <rect width="168" height="118" rx="8" fill="#1d3d32"/>
+    <text x="22" y="38" fill="#e5b84d" font-size="13" font-weight="700">PRESSURE</text>
+    <text x="22" y="72" fill="#ffffff" font-size="28" font-weight="700">-42%</text>
+    <text x="22" y="96" fill="#c9d8d0" font-size="12">chemical and biomass stress</text>
+  </g>
+  <g transform="translate(266 146)" font-family="Arial, sans-serif">
+    <rect width="168" height="118" rx="8" fill="#277da1"/>
+    <text x="22" y="38" fill="#d7edf4" font-size="13" font-weight="700">STATE</text>
+    <text x="22" y="72" fill="#ffffff" font-size="28" font-weight="700">+18%</text>
+    <text x="22" y="96" fill="#d7edf4" font-size="12">cover and biomass growth</text>
+  </g>
+  <g transform="translate(460 146)" font-family="Arial, sans-serif">
+    <rect width="168" height="118" rx="8" fill="#d97955"/>
+    <text x="22" y="38" fill="#ffe6dd" font-size="13" font-weight="700">RESPONSE</text>
+    <text x="22" y="72" fill="#ffffff" font-size="28" font-weight="700">+35%</text>
+    <text x="22" y="96" fill="#ffe6dd" font-size="12">recovery and resistance</text>
+  </g>
+  <g transform="translate(74 326)" font-family="Arial, sans-serif">
+    <text x="0" y="0" fill="#18231f" font-size="15" font-weight="700">Composite stability score</text>
+    <rect x="0" y="28" width="552" height="22" rx="8" fill="#d9e2dc"/>
+    <rect x="0" y="28" width="293" height="22" rx="8" fill="#d97955"/>
+    <rect x="0" y="76" width="552" height="22" rx="8" fill="#d9e2dc"/>
+    <rect x="0" y="76" width="394" height="22" rx="8" fill="#1d3d32"/>
+    <text x="0" y="67" fill="#5f6e67" font-size="12">Conventional baseline: 0.5299</text>
+    <text x="0" y="116" fill="#5f6e67" font-size="12">Organic transition: 0.7141</text>
+    <text x="502" y="67" fill="#5f6e67" font-size="12">critical</text>
+    <text x="502" y="116" fill="#5f6e67" font-size="12">more stable</text>
+  </g>
+</svg>

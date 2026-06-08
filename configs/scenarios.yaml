@@ -1,0 +1,94 @@
+metadata:
+  project: AgroEcoSim
+  framing: Organic agriculture ecosystem modeling and decision analysis
+  evaluation_horizon_years: 10
+  time_step_days: 1
+
+species:
+  - crop
+  - pest
+  - bird
+  - bat
+  - bee
+  - soil_biota
+
+baseline_parameters:
+  growth_rates:
+    crop: 0.20
+    pest: 0.15
+    bird: 0.05
+    bat: 0.04
+    bee: 0.06
+    soil_biota: 0.03
+  carrying_capacity:
+    crop: 500
+    pest: 300
+    bird: 20
+    bat: 18
+    bee: 60
+    soil_biota: 250
+  chemical_effect:
+    herbicide_on_crop: 0.05
+    pesticide_on_pest: 0.20
+  interaction_notes:
+    positive: pollination and decomposition support crop growth
+    negative: pests reduce crop biomass while predators suppress pests
+
+scenarios:
+  conventional_baseline:
+    label: Conventional baseline
+    chemical_intensity: 1.00
+    bats: false
+    bees: false
+    soil_regeneration_rate: 0.010
+    narrative: Reference system with scheduled herbicide and pesticide use.
+
+  chemical_withdrawal:
+    label: Chemical withdrawal
+    chemical_intensity: 0.00
+    bats: false
+    bees: false
+    soil_regeneration_rate: 0.018
+    narrative: Removes chemical mortality terms to expose yield-stability trade-offs.
+
+  bat_assisted_control:
+    label: Bat-assisted control
+    chemical_intensity: 0.35
+    bats: true
+    bees: false
+    soil_regeneration_rate: 0.022
+    narrative: Adds bat predation and pollination to evaluate biological control.
+
+  bee_assisted_pollination:
+    label: Bee-assisted pollination
+    chemical_intensity: 0.35
+    bats: false
+    bees: true
+    soil_regeneration_rate: 0.020
+    narrative: Adds pollination support with a weaker pest-control pathway.
+
+  integrated_biocontrol:
+    label: Integrated biocontrol
+    chemical_intensity: 0.20
+    bats: true
+    bees: true
+    soil_regeneration_rate: 0.028
+    narrative: Combines reduced chemical use with predators and pollinators.
+
+  organic_transition:
+    label: Organic transition
+    chemical_intensity: 0.10
+    bats: true
+    bees: true
+    soil_regeneration_rate: 0.035
+    narrative: Phases out chemical pressure while improving soil and biodiversity response.
+
+evaluation_metrics:
+  - composite_psr_score
+  - lyapunov_index
+  - coefficient_of_variation
+  - recovery_time
+  - crop_output_index
+  - chemical_pressure_index
+  - biodiversity_proxy
+  - long_term_sustainability

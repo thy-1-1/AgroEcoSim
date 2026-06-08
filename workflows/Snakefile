@@ -1,0 +1,18 @@
+configfile: "configs/scenarios.yaml"
+
+rule all:
+    input:
+        "results/tables/scenario_summary.csv",
+        "results/tables/stability_indicators.csv"
+
+rule indicator_pipeline:
+    output:
+        "results/tables/stability_indicators.csv"
+    shell:
+        "echo 'This portfolio workflow documents the indicator-processing stage.' > {output}"
+
+rule scenario_summary:
+    output:
+        "results/tables/scenario_summary.csv"
+    shell:
+        "echo 'This portfolio workflow documents the scenario-analysis stage.' > {output}"

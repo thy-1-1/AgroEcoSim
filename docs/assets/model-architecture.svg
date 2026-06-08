@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">AgroEcoSim model architecture</title>
+  <desc id="desc">A layered architecture diagram connecting drivers, crop process, food web dynamics, evaluation, inference, and decisions.</desc>
+  <rect width="1200" height="520" fill="#f7f9f5"/>
+  <rect x="34" y="34" width="1132" height="452" fill="#ffffff" stroke="#d9e2dc"/>
+  <text x="68" y="86" fill="#18231f" font-family="Arial, sans-serif" font-size="28" font-weight="700">AgroEcoSim Modeling Architecture</text>
+  <text x="68" y="116" fill="#5f6e67" font-family="Arial, sans-serif" font-size="15">From agricultural drivers to ecosystem stability and transition decisions</text>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="68" y="168" width="176" height="104" rx="8" fill="#1d3d32"/>
+    <text x="92" y="204" fill="#e5b84d" font-size="13" font-weight="700">INPUT DRIVERS</text>
+    <text x="92" y="232" fill="#ffffff" font-size="17" font-weight="700">Weather + Cycle</text>
+    <text x="92" y="257" fill="#c9d8d0" font-size="12">soil, crop calendar,</text>
+    <text x="92" y="274" fill="#c9d8d0" font-size="12">chemical intensity</text>
+
+    <rect x="296" y="132" width="190" height="104" rx="8" fill="#edf3ef" stroke="#cbd8d1"/>
+    <text x="320" y="168" fill="#d97955" font-size="13" font-weight="700">CROP PROCESS</text>
+    <text x="320" y="196" fill="#18231f" font-size="17" font-weight="700">Growth module</text>
+    <text x="320" y="221" fill="#5f6e67" font-size="12">seasonal carrying capacity</text>
+
+    <rect x="296" y="284" width="190" height="104" rx="8" fill="#edf3ef" stroke="#cbd8d1"/>
+    <text x="320" y="320" fill="#d97955" font-size="13" font-weight="700">FOOD WEB</text>
+    <text x="320" y="348" fill="#18231f" font-size="17" font-weight="700">gLV interactions</text>
+    <text x="320" y="373" fill="#5f6e67" font-size="12">predation, competition,</text>
+    <text x="320" y="390" fill="#5f6e67" font-size="12">pollination, mortality</text>
+
+    <rect x="548" y="168" width="202" height="104" rx="8" fill="#277da1"/>
+    <text x="572" y="204" fill="#ffffff" font-size="13" font-weight="700">SCENARIO ENGINE</text>
+    <text x="572" y="232" fill="#ffffff" font-size="17" font-weight="700">Intervention design</text>
+    <text x="572" y="257" fill="#d7edf4" font-size="12">bats, bees, withdrawal,</text>
+    <text x="572" y="274" fill="#d7edf4" font-size="12">organic transition</text>
+
+    <rect x="812" y="100" width="190" height="104" rx="8" fill="#6f5c85"/>
+    <text x="836" y="136" fill="#ffffff" font-size="13" font-weight="700">INFERENCE</text>
+    <text x="836" y="164" fill="#ffffff" font-size="17" font-weight="700">Parameter uncertainty</text>
+    <text x="836" y="189" fill="#eadff1" font-size="12">Bayesian gLV, sensitivity</text>
+
+    <rect x="812" y="240" width="190" height="104" rx="8" fill="#e5b84d"/>
+    <text x="836" y="276" fill="#2b2514" font-size="13" font-weight="700">EVALUATION</text>
+    <text x="836" y="304" fill="#2b2514" font-size="17" font-weight="700">PSR stability score</text>
+    <text x="836" y="329" fill="#5f4d17" font-size="12">Lyapunov, CV, recovery</text>
+
+    <rect x="812" y="380" width="190" height="72" rx="8" fill="#d97955"/>
+    <text x="836" y="416" fill="#ffffff" font-size="13" font-weight="700">ASSIMILATION</text>
+    <text x="836" y="438" fill="#ffffff" font-size="16" font-weight="700">State correction</text>
+
+    <rect x="1042" y="190" width="88" height="140" rx="8" fill="#18231f"/>
+    <text x="1086" y="231" fill="#e5b84d" font-size="12" font-weight="700" text-anchor="middle">DECISION</text>
+    <text x="1086" y="259" fill="#ffffff" font-size="16" font-weight="700" text-anchor="middle">Policy</text>
+    <text x="1086" y="282" fill="#ffffff" font-size="16" font-weight="700" text-anchor="middle">Matrix</text>
+  </g>
+
+  <g stroke="#5f6e67" stroke-width="2" fill="none" marker-end="url(#arrow)">
+    <path d="M244 220 C270 220 272 184 296 184"/>
+    <path d="M244 220 C270 220 272 336 296 336"/>
+    <path d="M486 184 C520 184 520 220 548 220"/>
+    <path d="M486 336 C520 336 520 220 548 220"/>
+    <path d="M750 220 C784 220 784 152 812 152"/>
+    <path d="M750 220 C784 220 784 292 812 292"/>
+    <path d="M750 220 C784 220 784 416 812 416"/>
+    <path d="M1002 152 C1030 152 1030 230 1042 230"/>
+    <path d="M1002 292 C1030 292 1030 260 1042 260"/>
+    <path d="M1002 416 C1030 416 1030 302 1042 302"/>
+  </g>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#5f6e67"/>
+    </marker>
+  </defs>
+</svg>

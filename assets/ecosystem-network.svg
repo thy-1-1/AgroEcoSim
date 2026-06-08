@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 520" role="img" aria-labelledby="title desc">
+  <title id="title">Agroecosystem food-web network</title>
+  <desc id="desc">A network diagram of crops, insects, birds, bats, bees, soil, decomposers, pesticides, and forest edge habitat.</desc>
+  <rect width="700" height="520" fill="#ffffff"/>
+  <rect x="26" y="26" width="648" height="468" fill="#f7f9f5" stroke="#d9e2dc"/>
+  <g stroke="#5f6e67" stroke-width="2" fill="none" opacity=".78">
+    <path d="M166 278 C222 214 282 194 350 212"/>
+    <path d="M350 212 C418 184 456 130 512 96"/>
+    <path d="M350 212 C428 252 484 302 556 338"/>
+    <path d="M166 278 C234 332 286 374 348 402"/>
+    <path d="M348 402 C270 404 226 374 166 278"/>
+    <path d="M166 278 C142 210 124 156 108 92"/>
+    <path d="M350 212 C286 134 218 98 108 92"/>
+    <path d="M350 212 C396 306 384 358 348 402"/>
+    <path d="M556 338 C468 378 424 402 348 402"/>
+    <path d="M512 96 C552 184 568 266 556 338"/>
+  </g>
+  <g font-family="Arial, sans-serif" font-weight="700" text-anchor="middle">
+    <g transform="translate(166 278)">
+      <circle r="54" fill="#1d3d32"/>
+      <text y="-4" fill="#ffffff" font-size="17">Crops</text>
+      <text y="18" fill="#c9d8d0" font-size="11">producer</text>
+    </g>
+    <g transform="translate(350 212)">
+      <circle r="48" fill="#d97955"/>
+      <text y="-4" fill="#ffffff" font-size="17">Pests</text>
+      <text y="18" fill="#ffe6dd" font-size="11">primary consumer</text>
+    </g>
+    <g transform="translate(512 96)">
+      <circle r="42" fill="#277da1"/>
+      <text y="-4" fill="#ffffff" font-size="16">Birds</text>
+      <text y="17" fill="#d7edf4" font-size="11">predator</text>
+    </g>
+    <g transform="translate(556 338)">
+      <circle r="46" fill="#6f5c85"/>
+      <text y="-4" fill="#ffffff" font-size="16">Bats</text>
+      <text y="17" fill="#eadff1" font-size="11">control + pollinate</text>
+    </g>
+    <g transform="translate(348 402)">
+      <circle r="42" fill="#e5b84d"/>
+      <text y="-4" fill="#2b2514" font-size="16">Bees</text>
+      <text y="17" fill="#5f4d17" font-size="11">pollinator</text>
+    </g>
+    <g transform="translate(108 92)">
+      <circle r="42" fill="#7a8c54"/>
+      <text y="-4" fill="#ffffff" font-size="16">Soil</text>
+      <text y="17" fill="#eef4dd" font-size="11">nutrients</text>
+    </g>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="12" fill="#5f6e67">
+    <rect x="60" y="438" width="580" height="32" fill="#ffffff" stroke="#d9e2dc"/>
+    <text x="82" y="459">Edges encode predation, competition, pollination, decomposition, and management disturbance.</text>
+  </g>
+</svg>
