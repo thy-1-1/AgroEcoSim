@@ -1,7 +1,7 @@
-scenario,stability_score,chemical_pressure,crop_output_index,ecological_interpretation
-Conventional baseline,0.5299,1.00,1.00,Reference productivity with high chemical pressure
-Chemical withdrawal,0.6030,0.00,0.62,Lower fluctuation and faster recovery with short-term yield trade-off
-Bat-assisted control,0.6810,0.35,1.08,Predation and pollination improve stability and crop output
-Bee-assisted pollination,0.6460,0.35,1.04,Pollination improves yield with moderate stability gain
-Integrated biocontrol,0.7010,0.20,1.12,Mixed intervention balances pressure reduction and productivity
-Organic transition,0.7141,0.10,1.18,Long-term stability improves through soil response and biological control
+scenario,scenario_id,chemical_pressure,mean_cv,crop_cv,soil_response,biodiversity_proxy,final_crop,mean_crop,mean_pest,interpretation,stability_score,crop_output_index
+Conventional baseline,conventional_baseline,1.0,0.08179,0.11882,0.2857142857142857,1.0,515.0427478599818,508.288880594541,63.92867958203145,Reference system with scheduled herbicide and pesticide use.,0.57822,1.0
+Chemical withdrawal,chemical_withdrawal,0.0,0.07721,0.10947,0.5142857142857142,1.0,502.60249209110054,497.1540066863075,105.35096946395069,Removes chemical mortality terms to expose yield-stability trade-offs.,0.74317,0.9781
+Bat-assisted control,bat_assisted_control,0.35,1.1202,0.10865,0.6285714285714284,1.0,575.0,565.0159809328202,0.78158306243866,Adds bat predation and pollination to evaluate biological control.,0.70384,1.1116
+Bee-assisted pollination,bee_assisted_pollination,0.35,0.10286,0.1254,0.5714285714285714,1.0,575.0,519.707893001195,147.07855354102426,Adds pollination support with a weaker pest-control pathway.,0.69673,1.0225
+Integrated biocontrol,integrated_biocontrol,0.2,1.083,0.10273,0.7999999999999999,1.0,575.0,566.1736782835787,0.8445138398175608,Combines reduced chemical use with predators and pollinators.,0.74174,1.1139
+Organic transition,organic_transition,0.1,1.07943,0.10198,1.0,1.0,575.0,566.270241083358,0.8562138514169209,Phases out chemical pressure while improving soil and biodiversity response.,0.77458,1.1141

@@ -1,8 +1,7 @@
 # Notebook Workflow
 
-These notebooks are intentionally lightweight portfolio notebooks. They describe
-the research workflow and show the intended interfaces for each analytical
-stage:
+These notebooks provide compact entry points into the research workflow and
+show the interfaces used by each analytical stage:
 
 1. indicator construction and PSR normalization;
 2. generalized Lotka-Volterra food-web simulation;
@@ -10,5 +9,5 @@ stage:
 4. scenario decision comparison;
 5. uncertainty and data-assimilation extensions.
 
-The repository emphasizes project presentation and research structure rather
-than full competition-solution reproduction.
+The notebook layer complements the executable scripts in `scripts/` and the
+package implementation in `src/agroecosim/`.

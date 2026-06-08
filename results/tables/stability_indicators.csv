@@ -1,9 +1,9 @@
-indicator,psr_group,tendency,portfolio_weight,interpretation
-producer_reduction_rate,pressure,negative,0.071,Producer loss weakens ecosystem stability
-pesticide_intensity,pressure,negative,0.009,Chemical pressure is treated as a stress signal
-total_biomass_reduction,pressure,negative,0.132,Biomass loss reflects system degradation
-crop_cover,state,positive,0.014,Cover is a direct ecosystem-state signal
-total_biomass_growth,state,positive,0.128,Growth indicates improving state quality
-carrying_capacity_growth,response,positive,0.197,Resource capacity supports long-term recovery
-ecosystem_resilience,response,positive,0.194,Resilience measures self-recovery ability
-ecosystem_resistance,response,positive,0.255,Resistance measures disturbance tolerance
+indicator,psr_group,tendency,entropy_weight
+producer_reduction_rate,pressure,negative,0.098023
+pesticide_intensity,pressure,negative,0.09604
+total_biomass_reduction,pressure,negative,0.124341
+crop_cover,state,positive,0.13835
+total_biomass_growth,state,positive,0.199335
+carrying_capacity_growth,response,positive,0.11861
+ecosystem_resilience,response,positive,0.112776
+ecosystem_resistance,response,positive,0.112524

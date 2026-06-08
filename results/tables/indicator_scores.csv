@@ -1,0 +1,37 @@
+month_index,composite_psr_score,stability_level
+0,0.17045,precarious
+1,0.36895,less stable
+2,0.41005,critical stability
+3,0.39642,less stable
+4,0.36764,less stable
+5,0.37589,less stable
+6,0.30667,less stable
+7,0.28218,less stable
+8,0.26321,less stable
+9,0.24839,less stable
+10,0.27794,less stable
+11,0.39927,less stable
+12,0.5284,critical stability
+13,0.59202,critical stability
+14,0.62056,more stable
+15,0.61187,more stable
+16,0.59284,critical stability
+17,0.59541,critical stability
+18,0.51647,critical stability
+19,0.4969,critical stability
+20,0.45023,critical stability
+21,0.43984,critical stability
+22,0.44846,critical stability
+23,0.67933,more stable
+24,0.73415,more stable
+25,0.76342,more stable
+26,0.82811,stable
+27,0.83787,stable
+28,0.79762,more stable
+29,0.79472,more stable
+30,0.76073,more stable
+31,0.7112,more stable
+32,0.68673,more stable
+33,0.66883,more stable
+34,0.73967,more stable
+35,0.82975,stable

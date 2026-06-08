@@ -1,7 +1,7 @@
 """Crop growth process layer.
 
 This module separates crop growth drivers from food-web interactions. It follows
-the portfolio framing inspired by process-based crop models: weather, seasonal
+the project framing inspired by process-based crop models: weather, seasonal
 stage, and soil response affect the crop carrying capacity before biotic
 interactions are evaluated.
 """
@@ -56,4 +56,3 @@ class CropGrowthDriver:
                 "crop_carrying_capacity": capacity,
             }
         )
-

@@ -5,7 +5,7 @@
 <h1 align="center">AgroEcoSim</h1>
 <p align="center"><strong>Organic Agriculture Ecosystem Modeling & Decision Analysis</strong></p>
 <p align="center">
-  A research-oriented modeling portfolio for exploring how crop growth, food-web interactions,
+  A modular research prototype for exploring how crop growth, food-web interactions,
   chemical interventions, and organic transition strategies shape agroecosystem stability.
 </p>
 
@@ -14,7 +14,7 @@
   <img alt="Award" src="https://img.shields.io/badge/Award-Meritorious%20Winner-d97955">
   <img alt="Model" src="https://img.shields.io/badge/Core-LV--PSR%20%2B%20gLV-277da1">
   <img alt="Research" src="https://img.shields.io/badge/Focus-Ecosystem%20Stability-e9c46a">
-  <img alt="Portfolio" src="https://img.shields.io/badge/Status-Research%20Portfolio-6a4c93">
+  <img alt="Status" src="https://img.shields.io/badge/Status-Research%20Prototype-6a4c93">
 </p>
 
 > **Research question.** How can an agroecosystem reduce chemical dependence while maintaining
@@ -22,13 +22,42 @@
 
 ## Project Overview
 
-AgroEcoSim reframes a 2025 MCM/ICM Problem E solution as a modular research portfolio. The project
+AgroEcoSim extends a 2025 MCM/ICM Problem E solution into a modular research prototype. The project
 connects population dynamics, ecological indicator evaluation, intervention experiments, parameter
 uncertainty, and decision analysis into one coherent workflow.
 
 The original study modeled the conversion of forest into farmland and evaluated how agricultural
 cycles, pesticides, returning species, bats, bees, and organic practices affect the ecosystem. This
 repository presents that work as an expanded modeling system rather than a single competition paper.
+
+## Quick Start
+
+The committed demo pipeline uses a deterministic synthetic agroecosystem data set so the core
+analysis can be run without external data access.
+
+```bash
+git clone https://github.com/thy-1-1/AgroEcoSim.git
+cd AgroEcoSim
+python -m pip install -r requirements.txt
+python scripts/run_pipeline.py
+python -m unittest discover -s tests -v
+```
+
+Equivalent Make targets are available:
+
+```bash
+make demo
+make test
+```
+
+The pipeline writes:
+
+- `data/demo/agroecosystem_timeseries.csv`
+- `results/tables/indicator_scores.csv`
+- `results/tables/stability_indicators.csv`
+- `results/tables/scenario_summary.csv`
+- `results/trajectories/*.csv`
+- `results/figures/*_generated.svg`
 
 | Research layer | Core question | Representative method |
 |---|---|---|
@@ -90,13 +119,13 @@ The platform combines an interpretable process model with an evaluation and deci
 | Module | Responsibility | Main interface |
 |---|---|---|
 | `data.pipeline` | Clean, align, normalize, and construct ecological indicators | `build_indicator_frame()` |
-| `models.foodweb` | Define and simulate generalized Lotka-Volterra dynamics | `GLVFoodWeb.simulate()` |
-| `models.psr` | Compute entropy weights and composite stability scores | `PSREvaluator.score()` |
-| `models.scenarios` | Apply management interventions and compare trajectories | `ScenarioRunner.run()` |
-| `inference.bayesian_glv` | Prepare interaction inference and uncertainty summaries | `BayesianGLV.fit()` |
+| `models.glv_foodweb` | Define and simulate generalized Lotka-Volterra dynamics | `GLVFoodWeb.simulate()` |
+| `models.psr_evaluation` | Compute entropy weights and composite stability scores | `PSREvaluator.score()` |
+| `models.scenario_simulation` | Apply management interventions and compare trajectories | `ScenarioRunner.run()` |
+| `inference.bayesian_glv` | Prepare interaction inference and uncertainty summaries | `BayesianGLV.summarize_interactions()` |
 | `assimilation.ensemble` | Update simulated states with observations | `EnsembleAssimilator.update()` |
 | `metrics.stability` | Calculate stability, resilience, and recovery metrics | `stability_report()` |
-| `visualization.figures` | Produce publication-style result figures | `plot_scenario_comparison()` |
+| `visualization.figures` | Produce dependency-light result figures | `write_scenario_comparison()` |
 
 ## Scenario Experiments
 
@@ -111,20 +140,25 @@ Six scenarios are expressed through a common configuration schema:
 | Integrated biocontrol | Combine reduced chemicals, bats, and bees | Test mixed intervention strategy |
 | Organic transition | Phase out chemicals and improve soil response | Evaluate long-term transition pathway |
 
-```yaml
-organic_transition:
-  chemical_intensity: 0.10
-  biological_control:
-    bats: true
-    bees: true
-  soil_regeneration_rate: 0.035
-  evaluation_horizon_years: 10
+```json
+{
+  "organic_transition": {
+    "chemical_intensity": 0.10,
+    "bats": true,
+    "bees": true,
+    "soil_regeneration_rate": 0.035
+  }
+}
 ```
 
 ## Results Gallery
 
 <p align="center">
-  <img src="assets/scenario-comparison.svg" alt="Scenario comparison" width="100%">
+  <img src="results/figures/scenario_comparison_generated.svg" alt="Generated scenario comparison" width="100%">
+</p>
+
+<p align="center">
+  <img src="results/figures/integrated_trajectories_generated.svg" alt="Generated integrated biocontrol trajectories" width="100%">
 </p>
 
 <p align="center">
@@ -153,7 +187,7 @@ Selected findings from the study narrative:
   instead of relying on qualitative interpretation.
 - Extended the research framing toward generalized food-web interactions, Bayesian parameter
   uncertainty, data assimilation, and modular scenario analysis.
-- Organized the project as a research software portfolio with explicit interfaces, configurations,
+- Organized the project as a research software prototype with explicit interfaces, configurations,
   result artifacts, and visual documentation.
 
 ## Repository Structure
@@ -162,11 +196,13 @@ Selected findings from the study narrative:
 AgroEcoSim/
 |-- assets/                  # README visuals and diagrams
 |-- configs/                 # Scenario and model configuration
-|-- docs/                    # GitHub Pages research portfolio
+|-- data/                    # Demo data generated by the pipeline
+|-- docs/                    # GitHub Pages documentation site
 |-- notebooks/               # Research workflow notebooks
 |-- results/
 |   |-- figures/             # Figure catalog
 |   `-- tables/              # Scenario and stability summaries
+|-- scripts/                 # Executable analysis entry points
 |-- src/agroecosim/
 |   |-- data/                # Indicator processing
 |   |-- models/              # gLV, PSR, and scenario modules
@@ -174,7 +210,9 @@ AgroEcoSim/
 |   |-- assimilation/        # Observation-state updates
 |   |-- metrics/             # Stability metrics
 |   `-- visualization/       # Result figures
-|-- workflows/               # Research pipeline orchestration
+|-- tests/                   # Unit tests and pipeline checks
+|-- workflows/               # Snakemake orchestration
+|-- Makefile                 # Common local commands
 `-- README.md
 ```
 
@@ -195,12 +233,10 @@ The extended design draws methodological inspiration from:
 
 This project originated from **2025 MCM/ICM Problem E** and received a **Meritorious Winner (M Award)**
 designation. The competition work provided the initial LV-PSR model, scenario experiments, numerical
-analysis, sensitivity study, and research communication foundation.
-
-> This repository is a research portfolio reconstruction. It emphasizes system design, analytical
-> depth, and project communication rather than claiming a fully reproducible scientific package.
+analysis, sensitivity study, and research communication foundation. The repository adds a runnable
+demo pipeline, package structure, tests, CI configuration, and generated result artifacts.
 
 ## GitHub Pages
 
-The portfolio site is contained in `docs/`. After uploading the repository, enable it through
+The documentation site is contained in `docs/`. After uploading the repository, enable it through
 **Settings > Pages > Deploy from a branch > main / docs**.

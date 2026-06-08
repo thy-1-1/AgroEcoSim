@@ -1,6 +1,6 @@
 """Ecological indicator pipeline for AgroEcoSim.
 
-This module expresses the data-processing layer used in the portfolio:
+This module implements the data-processing layer used in the demo pipeline:
 raw ecological and management observations are aligned to a common time axis,
 converted into PSR-compatible indicators, and normalized so positive and
 negative indicators can be compared in one composite evaluation.
@@ -96,7 +96,7 @@ def build_indicator_frame(
 
 
 def synthetic_indicator_sample(periods: int = 12) -> pd.DataFrame:
-    """Create a compact demonstration indicator set for portfolio figures."""
+    """Create a compact demonstration indicator set for examples."""
 
     t = np.linspace(0, 1, periods)
     return pd.DataFrame(

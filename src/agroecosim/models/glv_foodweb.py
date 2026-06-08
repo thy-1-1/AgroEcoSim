@@ -15,7 +15,7 @@ import pandas as pd
 
 try:
     from scipy.integrate import solve_ivp
-except ModuleNotFoundError:  # pragma: no cover - fallback for lightweight portfolio environments
+except ModuleNotFoundError:  # pragma: no cover - fallback for lightweight environments
     solve_ivp = None
 
 
@@ -39,7 +39,7 @@ class GLVFoodWeb:
     def derivative(self, _: float, state: np.ndarray) -> np.ndarray:
         """Compute the gLV derivative for the current state."""
 
-        safe_state = np.clip(state, 0.0, self.carrying_capacity * 3.0)
+        safe_state = np.clip(state, 0.0, self.carrying_capacity * 1.15)
         interaction_term = self.interaction_matrix @ safe_state
         density_term = 1.0 - safe_state / self.carrying_capacity
         return safe_state * (self.growth_rates * density_term + interaction_term)
@@ -78,7 +78,7 @@ class GLVFoodWeb:
             values = np.zeros((steps, len(initial)), dtype=float)
             values[0] = initial
             dt = horizon / max(steps - 1, 1)
-            upper = self.carrying_capacity * 3.0
+            upper = self.carrying_capacity * 1.15
             for index in range(1, steps):
                 next_state = values[index - 1] + dt * self.derivative(time[index - 1], values[index - 1])
                 values[index] = np.clip(
@@ -93,7 +93,7 @@ class GLVFoodWeb:
 
 
 def demo_foodweb() -> GLVFoodWeb:
-    """Return a display-oriented six-species food-web model."""
+    """Return the six-species food-web model used by the demo pipeline."""
 
     species = ["crop", "pest", "bird", "bat", "bee", "soil_biota"]
     growth = np.array([0.20, 0.15, 0.05, 0.04, 0.06, 0.03])

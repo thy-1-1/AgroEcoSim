@@ -1,2 +1,1 @@
-"""Visualization helpers for research portfolio figures."""
-
+"""Visualization helpers for generated research figures."""

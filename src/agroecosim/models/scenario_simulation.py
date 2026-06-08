@@ -4,12 +4,11 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any
 
 import numpy as np
 import pandas as pd
-import yaml
 
+from agroecosim.config import load_config
 from agroecosim.models.glv_foodweb import GLVFoodWeb, demo_foodweb
 
 
@@ -34,10 +33,9 @@ class ScenarioRunner:
 
     @staticmethod
     def load(path: str | Path) -> list[Scenario]:
-        """Load scenario definitions from a YAML configuration file."""
+        """Load scenario definitions from the project JSON configuration."""
 
-        with Path(path).open("r", encoding="utf-8") as handle:
-            config: dict[str, Any] = yaml.safe_load(handle)
+        config = load_config(path)
         scenarios = []
         for name, item in config["scenarios"].items():
             scenarios.append(

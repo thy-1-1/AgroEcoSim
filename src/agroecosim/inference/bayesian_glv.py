@@ -1,6 +1,6 @@
 """Bayesian-style interface for generalized Lotka-Volterra inference.
 
-The portfolio presents the workflow interface used for uncertainty analysis:
+This module presents the workflow interface used for uncertainty analysis:
 compute log-derivatives, form regression matrices, and summarize interaction
 coefficients with credible intervals. A production implementation could connect
 this layer to CmdStanPy, PyMC, or another Bayesian backend.

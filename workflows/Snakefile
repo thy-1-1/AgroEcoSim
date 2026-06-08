@@ -1,18 +1,44 @@
-configfile: "configs/scenarios.yaml"
+configfile: "configs/scenarios.json"
 
 rule all:
     input:
+        "data/demo/agroecosystem_timeseries.csv",
         "results/tables/scenario_summary.csv",
-        "results/tables/stability_indicators.csv"
+        "results/tables/stability_indicators.csv",
+        "results/tables/indicator_scores.csv",
+        "results/figures/scenario_comparison_generated.svg",
+        "results/figures/integrated_trajectories_generated.svg"
+
+rule demo_data:
+    output:
+        "data/demo/agroecosystem_timeseries.csv"
+    shell:
+        "PYTHONPATH=src python scripts/generate_demo_data.py"
 
 rule indicator_pipeline:
+    input:
+        "data/demo/agroecosystem_timeseries.csv"
     output:
-        "results/tables/stability_indicators.csv"
+        "results/tables/stability_indicators.csv",
+        "results/tables/indicator_scores.csv"
     shell:
-        "echo 'This portfolio workflow documents the indicator-processing stage.' > {output}"
+        "PYTHONPATH=src python -m agroecosim.cli --root . indicators"
 
 rule scenario_summary:
+    input:
+        "configs/scenarios.json"
     output:
-        "results/tables/scenario_summary.csv"
+        "results/tables/scenario_summary.csv",
+        "results/trajectories/integrated_biocontrol.csv"
     shell:
-        "echo 'This portfolio workflow documents the scenario-analysis stage.' > {output}"
+        "PYTHONPATH=src python scripts/run_scenarios.py"
+
+rule figures:
+    input:
+        "results/tables/scenario_summary.csv",
+        "results/trajectories/integrated_biocontrol.csv"
+    output:
+        "results/figures/scenario_comparison_generated.svg",
+        "results/figures/integrated_trajectories_generated.svg"
+    shell:
+        "PYTHONPATH=src python scripts/generate_figures.py"
